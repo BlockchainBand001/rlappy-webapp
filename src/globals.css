@@ -1,0 +1,16 @@
+
+/* ...existing code... */
+
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+  // ...other light theme styles...
+}
+
+body.dark {
+  background-color: #000000;
+  color: #ffffff;
+  // ...other dark theme styles...
+}
+
+/* Add styles for header, footer, buttons, etc. */
