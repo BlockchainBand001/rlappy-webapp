@@ -21,3 +21,30 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           {isLoggedIn ? (
             <>
               <a href="#" className="text-gray-700 hover:text-green-500">Dashboard</a>
+              <a href="#" className="text-gray-700 hover:text-green-500">Logout</a>
+            </>
+          ) : (
+            <a href="#" className="text-gray-700 hover:text-green-500">Login</a>
+          )}
+        </div>
+        <ThemeSwitcher />
+      </header>
+      <main className="bg-gray-50">
+        {children}
+      </main>
+      <footer className="container mx-auto py-4 px-6">
+        <div className="flex justify-between items-center">
+          <nav className="space-x-4 mb-4">
+            <a href="#" className="text-gray-700 hover:text-green-500">Home</a>
+            <a href="#" className="text-gray-700 hover:text-green-500">Catalog</a>
+            <a href="#" className="text-gray-700 hover:text-green-500">About Us</a>
+            <a href="#" className="text-gray-700 hover:text-green-500">Contact Us</a>
+          </nav>
+          <p className="text-gray-600">Copyright 2024-2025 @ Blockchain Band</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;

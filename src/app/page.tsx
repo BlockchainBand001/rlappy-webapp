@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
+// setup
 const HomePage = () => {
   return (
     <section className="container mx-auto px-6 py-8">
