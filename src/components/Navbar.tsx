@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import Image from 'next/image';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import ThemeSwitcher from './ThemeSwitcher'; // Changed from named import to default import
 
 interface NavbarProps {
   isLoggedIn: boolean;
@@ -16,7 +16,7 @@ export const Navbar = ({ isLoggedIn }: NavbarProps) => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-white/75 dark:bg-gray-900/75 border-b border-gray-200 dark:border-gray-700">
+    <header className="navbar">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/logo.svg" alt="RLappy Logo" width={40} height={40} />

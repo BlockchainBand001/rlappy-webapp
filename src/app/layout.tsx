@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import '../app/globals.css'; // Ensure global styles are imported
 
 export default function RootLayout({
   children,
@@ -13,9 +14,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col bg-primary transition-colors duration-500">
         <Navbar isLoggedIn={isLoggedIn} />
-        <main className="flex-grow bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <main className="flex-grow bg-gradient-r-green-blue dark:bg-gradient-r-blue-lightblue transition-colors duration-500">
           {children}
         </main>
         <Footer />

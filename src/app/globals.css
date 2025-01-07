@@ -4,18 +4,26 @@
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors;
+    @apply px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors;
   }
   
   .btn-secondary {
-    @apply px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg 
-           hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors;
+    @apply px-4 py-2 border border-secondary dark:border-secondary-dark rounded-lg 
+           hover:bg-secondary dark:hover:bg-secondary-dark transition-colors;
   }
 
   .card {
     @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6
            border border-gray-200 dark:border-gray-700
-           hover:shadow-xl transition-shadow;
+           hover:shadow-xl dark:hover:shadow-2xl transition-shadow;
+  }
+
+  .navbar {
+    @apply sticky top-0 z-50 backdrop-blur-md bg-white/75 dark:bg-gray-900/75 border-b border-gray-200 dark:border-gray-700;
+  }
+
+  .footer {
+    @apply bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700;
   }
 }
 
