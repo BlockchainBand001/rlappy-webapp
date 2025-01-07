@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../components/button'; // Added import
+import Button from '../components/Button'; // Added import
 import { ProductCard } from '@/components/ProductCard';
+
+
 
 export default function HomePage() {
   const products = [
