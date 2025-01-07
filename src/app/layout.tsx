@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from 'react';
-// ...existing code...
+import ThemeSwitcher from '../components/ThemeSwitcher'; // Added import
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
