@@ -1,51 +1,25 @@
 "use client";
 import React, { useState } from 'react';
-import ThemeSwitcher from '../components/ThemeSwitcher'; // Added import
+import ThemeSwitcher from '@/components/ThemeSwitcher';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div>
-      <header className="container mx-auto flex justify-between items-center py-4 px-6">
-        <div className="flex items-center">
-          <img src="https://placehold.co/50x50" alt="Logo" className="h-10 w-10" />
-          <span className="ml-2 text-xl font-bold">RLappy</span>
-        </div>
-        <nav className="space-x-4">
-          <a href="#" className="text-gray-700 hover:text-green-500">Home</a>
-          <a href="#" className="text-gray-700 hover:text-green-500">Catalog</a>
-          <a href="#" className="text-gray-700 hover:text-green-500">About Us</a>
-          <a href="#" className="text-gray-700 hover:text-green-500">Contact Us</a>
-        </nav>
-        <div className="space-x-4">
-          {isLoggedIn ? (
-            <>
-              <a href="#" className="text-gray-700 hover:text-green-500">Dashboard</a>
-              <a href="#" className="text-gray-700 hover:text-green-500">Logout</a>
-            </>
-          ) : (
-            <a href="#" className="text-gray-700 hover:text-green-500">Login</a>
-          )}
-        </div>
-        <ThemeSwitcher />
-      </header>
-      <main className="bg-gray-50">
-        {children}
-      </main>
-      <footer className="container mx-auto py-4 px-6">
-        <div className="flex justify-between items-center">
-          <nav className="space-x-4 mb-4">
-            <a href="#" className="text-gray-700 hover:text-green-500">Home</a>
-            <a href="#" className="text-gray-700 hover:text-green-500">Catalog</a>
-            <a href="#" className="text-gray-700 hover:text-green-500">About Us</a>
-            <a href="#" className="text-gray-700 hover:text-green-500">Contact Us</a>
-          </nav>
-          <p className="text-gray-600">Copyright 2024-2025 @ Blockchain Band</p>
-        </div>
-      </footer>
-    </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen flex flex-col">
+        <Navbar isLoggedIn={isLoggedIn} />
+        <main className="flex-grow bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
   );
-};
-
-export default Layout;
+}

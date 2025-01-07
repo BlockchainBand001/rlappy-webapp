@@ -2,25 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg 
+           hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6
+           border border-gray-200 dark:border-gray-700
+           hover:shadow-xl transition-shadow;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-.theme-dark {
+.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
-}
-.theme-light {
-  --background: #ffffff;
-  --foreground: #171717;
 }
 
 body {
