@@ -3,8 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../components/Button'; // Added import
 import { ProductCard } from '@/components/ProductCard';
-
-
+import { AboutUsSection } from '@/components/sections/AboutUsSection';
+import { ContactUsSection } from '@/components/sections/ContactUsSection';
+import { CatalogPreviewSection } from '@/components/sections/CatalogPreviewSection';
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
+import { FeaturesSection } from '@/components/sections/FeaturesSection';
 
 export default function HomePage() {
   const products = [
@@ -19,7 +22,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 space-y-24">
       <section className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
           Welcome to RLappy
@@ -29,11 +32,21 @@ export default function HomePage() {
         </p>
       </section>
 
+      <FeaturesSection />
+
+      <CatalogPreviewSection />
+
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {products.map(product => (
           <ProductCard key={product.id} {...product} />
         ))}
       </section>
+
+      <TestimonialsSection />
+
+      <AboutUsSection />
+
+      <ContactUsSection />
     </div>
   );
 }
