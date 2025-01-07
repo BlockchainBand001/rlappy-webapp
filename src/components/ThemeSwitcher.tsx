@@ -15,7 +15,8 @@ const ThemeSwitcher: React.FC = () => {
       setTheme(prefersDark ? 'dark' : 'light');
       document.documentElement.classList.toggle('dark', prefersDark);
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Ensure the dependency array remains empty
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';

@@ -14,7 +14,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col bg-primary transition-colors duration-500">
+      <body className="min-h-screen flex flex-col transition-colors duration-500">
         <Navbar isLoggedIn={isLoggedIn} />
         <main className="flex-grow bg-gradient-r-green-blue dark:bg-gradient-r-blue-lightblue transition-colors duration-500">
           {children}
