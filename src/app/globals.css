@@ -14,6 +14,15 @@
   }
 }
 
+.theme-dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+.theme-light {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

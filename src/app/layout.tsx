@@ -1,41 +1,23 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import { ThemeProvider } from "@/contexts/ThemeContext";
+import React, { useState } from 'react';
+// ...existing code...
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Professional E-commerce Site",
-  description: "A modern e-commerce platform",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider>
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
-}
+    <div>
+      <header className="container mx-auto flex justify-between items-center py-4 px-6">
+        <div className="flex items-center">
+          <img src="https://placehold.co/50x50" alt="Logo" className="h-10 w-10" />
+          <span className="ml-2 text-xl font-bold">RLappy</span>
+        </div>
+        <nav className="space-x-4">
+          <a href="#" className="text-gray-700 hover:text-green-500">Home</a>
+          <a href="#" className="text-gray-700 hover:text-green-500">Catalog</a>
+          <a href="#" className="text-gray-700 hover:text-green-500">About Us</a>
+          <a href="#" className="text-gray-700 hover:text-green-500">Contact Us</a>
+        </nav>
+        <div className="space-x-4">
+          {isLoggedIn ? (
+            <>
+              <a href="#" className="text-gray-700 hover:text-green-500">Dashboard</a>
